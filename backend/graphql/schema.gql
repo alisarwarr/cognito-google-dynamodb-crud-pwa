@@ -1,0 +1,27 @@
+schema {
+    query: Query
+    mutation: Mutation
+}
+
+
+type Post {
+    id: ID!
+    title: String!
+    description: String!
+    author: String!
+    city: String!
+    country: String!
+}
+
+
+type Query {
+    getOnePost(id: ID!): Post
+    getAllPosts: [Post!]
+}
+
+
+type Mutation {
+    createPost(title: String!, description: String!, author: String!, city: String!, country: String!): Post
+    deletePost(id: ID!): String
+    updatePost(id: ID!, title: String!, description: String!, author: String!, city: String!, country: String!): Post
+}
